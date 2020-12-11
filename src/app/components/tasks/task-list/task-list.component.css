@@ -1,0 +1,23 @@
+.content {
+    overflow: auto;
+    height: 20.5rem;
+    display: block;
+    width: 85rem;
+    background-color: gray;
+}
+
+.content-task-card {
+    height: 8rem;
+    width: 30rem;
+    margin: 5px 5px 5px 5px;
+    overflow: auto;
+}
+
+span {
+    vertical-align: middle;
+    margin-left: 50px;
+}
+
+button {
+    margin-left: 6px;
+}

@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-title class="title">Adicionar Tarefas</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Titulo" 
+            [(ngModel)]="task.title" name="title">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput placeholder="Descrição" 
+            [(ngModel)]="task.description" name="description"></textarea>
+        </mat-form-field>
+    </form>
+    <span>
+        <button mat-button (click)="createTask()" color="accent">
+            <i class="material-icons">
+                add_task
+            </i>
+        </button>
+        <button mat-button (click)="cancel()" color="warn">
+            <i class="material-icons">
+                highlight_off
+            </i>
+        </button>
+        <button mat-button (click)="saveTask()" color="basic">
+            <i class="material-icons">
+                backup
+            </i>
+        </button>
+    </span>
+</mat-card>
