@@ -1,32 +1,32 @@
 <mat-card class="content">
     <mat-card-title class="title">Tarefas</mat-card-title>
     <mat-grid-list cols="3" rowHeight="3:1" >
-        <div *ngFor="let item of tasks">
+        <div *ngFor="let task of tasks">
 
         <mat-grid-tile>
             <mat-card class="content-task-card">
+                <span>
+                    <button mat-button color="accent">
+                        <i class="material-icons">
+                            check_circle_outline
+                        </i>
+                    </button>
+                    <button mat-button color="basic">
+                        <i class="material-icons">
+                            build
+                        </i>
+                    </button>
+                    <button mat-button color="warn">
+                        <i class="material-icons">
+                            delete
+                        </i>
+                    </button>
+                </span>
                 <mat-card-title class="title">
-                    {{ item.title }}
-                    <span>
-                        <button mat-button color="accent">
-                            <i class="material-icons">
-                                check_circle_outline
-                            </i>
-                        </button>
-                        <button mat-button color="basic">
-                            <i class="material-icons">
-                                build
-                            </i>
-                        </button>
-                        <button mat-button color="warn">
-                            <i class="material-icons">
-                                delete
-                            </i>
-                        </button>
-                    </span>
+                    {{ task.title }}
                 </mat-card-title>
                 <mat-card-content>
-                    {{ item.description }}
+                    {{ task.description }}
                 </mat-card-content>
             </mat-card>
         </mat-grid-tile>

@@ -1,13 +1,13 @@
 <mat-card>
     <mat-card-title class="title">Adicionar Tarefas</mat-card-title>
-    <form>
+    <form class="form" [formGroup]="form">
         <mat-form-field>
-            <input matInput placeholder="Titulo" 
-            [(ngModel)]="task.title" name="title">
+            <input matInput class="task-field" type="text" placeholder="Titulo" maxlength="28"
+            id="_title" formControlName="_title">
         </mat-form-field>
         <mat-form-field>
-            <textarea matInput placeholder="Descrição" 
-            [(ngModel)]="task.description" name="description"></textarea>
+            <textarea matInput class="task-field" type="text" placeholder="Descrição" maxlength="48"
+            id="_description" formControlName="_description"></textarea>
         </mat-form-field>
     </form>
     <span>

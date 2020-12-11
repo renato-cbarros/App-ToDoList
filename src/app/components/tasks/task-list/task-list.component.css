@@ -14,10 +14,11 @@
 }
 
 span {
-    vertical-align: middle;
-    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 10px;
+    height: 10px;
+    margin-left: 86%;
 }
 
-button {
-    margin-left: 6px;
-}
+
