@@ -11,6 +11,7 @@ export class TaskService {
   private key = 'tasks'
   public tasks: Array<Task> = []
   public refresh: BehaviorSubject<any> = new BehaviorSubject([])
+  public Swal = require('sweetalert2')
 
   constructor(private snackBar: MatSnackBar) { }
 
@@ -32,23 +33,42 @@ export class TaskService {
     return ver
   }
 
-  create(task: Task): void {
+  set(task: Task): void {
     let id: number = this.tasks.length + 1
     this.tasks.push(new Task(id, task.title, task.description, task.status))
     this.refresh.next(this.tasks)
   }
 
-  getTasks(): Array<Task> {
+  getTaskList(): Array<Task> {
     return this.tasks
   }
 
-  saveTaks() {
+  update(task: Task, newTask: Task) {
+    let position = this.tasks.indexOf(task)
+    if (position == -1) {
+      this.showMessage('Erro ao atualizar tarefa!')
+    } else {
+      this.showMessage('Tarefa atualizada com sucesso!')
+      this.tasks[position] = newTask
+    }
     console.log(this.tasks)
-    localStorage.setItem(this.key, JSON.stringify(this.tasks))
+    this.refresh.next(this.tasks)
   }
 
-  deleteAllStorage(): void {
-    this.tasks = []
+  delete(task: Task): void {
+    let position = this.tasks.indexOf(task)
+    if (position == -1) {
+      this.showMessage('Erro ao atualizar tarefa!')
+    } else {
+      this.tasks.splice(position, 1)
+      this.showMessage('Tarefa deletada com sucesso!')
+    }
+    this.refresh.next(this.tasks)
+  }
+
+  save() {
+    console.log(this.tasks)
+    localStorage.setItem(this.key, JSON.stringify(this.tasks))
   }
 
   getTasksLocalStorage(): void {

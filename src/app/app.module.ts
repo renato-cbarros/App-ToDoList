@@ -18,9 +18,9 @@ import { MatCardModule } from "@angular/material/card";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 
-
 import { TaskCreateComponent } from './components/tasks/task-create/task-create.component';
 import { TaskListComponent } from './components/tasks/task-list/task-list.component';
+import { ModalTaskUpdateComponent } from './components/tasks/modal-task-update/modal-task-update.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { TaskListComponent } from './components/tasks/task-list/task-list.compon
     HeaderComponent,
     FooterComponent,
     TaskCreateComponent,
-    TaskListComponent
+    TaskListComponent,
+    ModalTaskUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +48,7 @@ import { TaskListComponent } from './components/tasks/task-list/task-list.compon
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalTaskUpdateComponent],
 })
 export class AppModule { }

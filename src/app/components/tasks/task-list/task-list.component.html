@@ -1,22 +1,22 @@
 <mat-card class="content">
-    <mat-card-title class="title">Tarefas</mat-card-title>
-    <mat-grid-list cols="3" rowHeight="3:1" >
+    <div class="content-card">
         <div *ngFor="let task of tasks">
-
-        <mat-grid-tile>
             <mat-card class="content-task-card">
                 <span>
-                    <button mat-button color="accent">
-                        <i class="material-icons">
+                    <button mat-button color="accent" (click)="completeTask(task)">
+                        <i class="material-icons" [hidden]="task.status">
                             check_circle_outline
                         </i>
+                        <i class="material-icons" [hidden]="!task.status">
+                            check_circle
+                        </i>
                     </button>
-                    <button mat-button color="basic">
+                    <button mat-button color="basic" (click)="updateTask(task)">
                         <i class="material-icons">
                             build
                         </i>
                     </button>
-                    <button mat-button color="warn">
+                    <button mat-button color="warn" (click)="deleteTask(task)">
                         <i class="material-icons">
                             delete
                         </i>
@@ -29,10 +29,9 @@
                     {{ task.description }}
                 </mat-card-content>
             </mat-card>
-        </mat-grid-tile>
+        </div>
     </div>
 
-    </mat-grid-list>
     <!-- 
     <mat-card class="content-task-card">
         <mat-card-title class="title">Adicionar Tarefas</mat-card-title>

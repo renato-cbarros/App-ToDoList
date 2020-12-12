@@ -22,13 +22,3 @@ span {
     justify-content: center;
 
 }
-
-@media(max-width: 576px) {
-    form {
-        display: flex;
-        flex-direction: column;
-        width: 28.5rem;
-        height: 6rem;
-    }
-    
-}

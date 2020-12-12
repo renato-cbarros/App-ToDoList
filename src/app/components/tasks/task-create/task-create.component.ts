@@ -43,7 +43,6 @@ export class TaskCreateComponent implements OnInit {
   cancel(): void {
     this.creanFields()
     this.taskService.showMessage("Criação de tarefa cancelada!", true)
-    this.taskService.deleteAllStorage()
   }
 
   createTask(): void {
@@ -53,17 +52,33 @@ export class TaskCreateComponent implements OnInit {
     if (ver) {
       this.taskService.showMessage("Erro! Campos em branco ou não preenchidos!", true)
     } else {
-      this.taskService.create(this.task)
+      this.taskService.set(this.task)
       this.taskService.showMessage("Tarefa criada!", false)
       this.creanFields()
-      
+
     }
   }
 
   saveTask(): void {
-      console.log(this.taskService.getTasks()+ "AAAAAAAAAAAAAAAAA")
-      this.taskService.saveTaks();
-      this.taskService.showMessage("Tarefa salva!", false)
+
+    this.taskService.Swal.fire({
+      width: 400,
+      title: "Deseja realmente salvar as informações?",
+      icon: "info",
+      showCancelButton: true,
+      confirmButtonColor: 'green',
+      cancelButtonColor: 'red',
+      confirmButtonText: 'Sim',
+      cancelButtonText: 'Não'
+    }).then((result) => {
+      if (result.value == true) {
+        this.taskService.save();
+        this.taskService.showMessage("Tarefas salvas!", false)
+      } else {
+        this.taskService.showMessage("Tarefas não salvas!", true)
+      }
+    })
+
   }
 
 

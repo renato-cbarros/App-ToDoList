@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-title class="title">Editar Tarefa</mat-card-title>
+    <form class="form" [formGroup]="form">
+        <mat-form-field>
+            <input matInput class="task-field" type="text" placeholder="Titulo" maxlength="28"
+            id="_title" formControlName="_title">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput class="task-field" type="text" placeholder="Descrição" maxlength="48"
+            id="_description" formControlName="_description"></textarea>
+        </mat-form-field>
+    </form>
+    <span>
+        <button mat-button ngbAutofocus (click)="update()" color="accent">
+            <i class="material-icons">
+                add_task
+            </i>
+        </button>
+        <button mat-button (click)="close()" color="warn">
+            <i class="material-icons">
+                highlight_off
+            </i>
+        </button>
+    </span>
+</mat-card>

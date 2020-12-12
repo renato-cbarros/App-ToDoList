@@ -1,14 +1,24 @@
 .content {
     overflow: auto;
-    height: 20.5rem;
-    display: block;
-    width: 85rem;
+    height: 100%;
+    width: 100%;
     background-color: gray;
+    display: flex;
+}
+
+.content-card {
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 53.5%;
+    grid-template-areas: "content-task-card content-task-card content-task-card";
 }
 
 .content-task-card {
-    height: 8rem;
-    width: 30rem;
+    height: 9rem;
+    width: 99%;
     margin: 5px 5px 5px 5px;
     overflow: auto;
 }
@@ -21,4 +31,50 @@ span {
     margin-left: 86%;
 }
 
+@media(max-width: 768px) {
+    .content {
+        overflow: auto;
+        height: 100%;
+        width: 100%;
+        background-color: gray;
+        display: flex;
+    }
+    .content-card {
+        background-color: gray;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 63%;
+        grid-template-areas: "content-task-card content-task-card";
+    }
+    .content-task-card {
+        height: 10rem;
+        width: 98%;
+        overflow: auto;
+    }
+}
 
+@media(max-width: 576px) {
+    .content {
+        overflow: auto;
+        height: 20.5rem;
+        width: 100%;
+        background-color: gray;
+        display: flex;
+    }
+    .content-card {
+        height: 50%;
+        width: 100%;
+        background-color: gray;
+        display: grid;
+        grid-template-columns: 95%;
+        grid-template-rows: 105%;
+        grid-template-areas: "content-task-card";
+    }
+    .content-task-card {
+        height: 9rem;
+        width: 98%;
+        margin: 5px 5px 5px 5px;
+        overflow: auto;
+        margin-left: 22px;
+    }
+}
