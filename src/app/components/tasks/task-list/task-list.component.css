@@ -4,6 +4,7 @@
     width: 100%;
     background-color: gray;
     display: flex;
+    justify-content: center;
 }
 
 .content-card {
@@ -14,11 +15,12 @@
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 53.5%;
     grid-template-areas: "content-task-card content-task-card content-task-card";
+    justify-content: center;
 }
 
 .content-task-card {
     height: 9rem;
-    width: 99%;
+    width: 90%;
     margin: 5px 5px 5px 5px;
     overflow: auto;
 }
@@ -75,6 +77,5 @@ span {
         width: 98%;
         margin: 5px 5px 5px 5px;
         overflow: auto;
-        margin-left: 22px;
     }
 }
